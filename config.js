@@ -6,7 +6,7 @@ const config = {
     trailingSlash: false,
   },
   header: {
-    logo: '/static/alfred-logo.svg',
+    logo: '/alfred-logo.svg',
     logoLink: '/',
     title:
       "Alfred v1 Docs",
