@@ -198,7 +198,7 @@ This header shows an example of configuration. It is just a demo so feel free to
 
     <div class="container">
         @if (!empty($components->headline))
-            <h1 class="headline-1 mb-5em animation-fadeInUp" >
+            <h1 class="headline-1">
                 {{ $components->headline }}
             </h1>
         @endif
