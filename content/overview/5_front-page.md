@@ -1,32 +1,11 @@
 ---
 title: "Front Page"
-metaTitle: "This is the title tag of this page"
-metaDescription: "This is the meta description"
+metaTitle: "Front Page"
+metaDescription: ""
 ---
 
-Some introduction text. Lists out all the headings from h1 to h6. Easy to customise.
+The brain of the whole system is the `Website/RouteController.php`. It is the main controller that during the page loading the system has to go through it. Please go to Website routes section to understand it. The Alfred brain takes the page that needs to be displayed and based on the settings saved in the **pages** table, decides which PHP service should be called. In the service you have the total freedom - anything you need to create (like custom PHP methods to make some custom operations) you can create over there. From the service you also return the view (blade file) that is responsible for displaying front page.
 
-# Heading H1
-Heading 1 text
+**BaseService** —> every module service extends the Base Service that contains a lot of useful ready methods.
 
-## Heading H2
-Heading 2 text
-
-### Heading H3
-Heading 3 text
-
-#### Heading H4
-Heading 4 text
-
-##### Heading H5
-Heading 5 text
-
-###### Heading H6
-Heading 6 text
-
-## Lists
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+Important part or rendering the page is also LayoutBuilder. It passes variables needed on each page. LayoutBuilderService has an array of required properties and in assigning variables method it goes through each value and calls method `get<PropertyNameInCamelCase>()` of `LayoutParameters` class. After that in `$layout` variable we have all data that were present in required properties array.
