@@ -31,6 +31,7 @@ const config = {
       '/components',
       '/headers-and-sections',
       '/imgix',
+      '/integrations',
       '/menu',
       '/non-content-modules',
       '/micro-components',

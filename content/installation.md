@@ -4,7 +4,7 @@ metaTitle: "This is the title tag of this page"
 metaDescription: "This is the meta description"
 ---
 
-# Requirements in your developer’s environment
+# Requirements in your development environment
 Alfred is built on top of Laravel framework (v. 6.0 LTS) and AngularJS.
 For Laravel you need to have Nginx/Apache, PHP 7.4, MySQL database (can be MariaDB).
 
