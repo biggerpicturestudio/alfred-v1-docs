@@ -27,6 +27,18 @@ const config = {
     forcedNavOrder: [
       '/installation',
       '/overview',
+      '/content-modules',
+      '/components',
+      '/headers-and-sections',
+      '/imgix',
+      '/menu',
+      '/non-content-modules',
+      '/micro-components',
+      '/routing',
+      '/partials',
+      '/settings',
+      '/video-tutorials',
+      '/code-snippets'
     ],
     collapsedNav: [
     ],
