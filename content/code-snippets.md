@@ -377,6 +377,16 @@ Please remember to embed image in every section with lazy loading! This example 
 {!! Imgix::getSingleURL($components->some_path_to_file) !!}
 ```
 
+### Example of buttons implementation
+
+```
+@if (!empty($components->btns))
+    @foreach($components->btns as $button)
+        {!! HTML::button($button') !!}
+    @endforeach
+@endif
+```
+
 ### Example of returning encoded email address
 Please use this method wherever you want to display email address - it encodes it to HTML entites, making it slightly more difficult for spam bots to be grabbed!
 
