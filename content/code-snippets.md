@@ -382,7 +382,7 @@ Please remember to embed image in every section with lazy loading! This example 
 ```
 @if (!empty($components->btns))
     @foreach($components->btns as $button)
-        {!! HTML::button($button') !!}
+        {!! HTML::button($button) !!}
     @endforeach
 @endif
 ```
