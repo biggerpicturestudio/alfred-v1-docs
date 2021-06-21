@@ -35,12 +35,12 @@ We can divide the sections into 2 groups: **headers** and **sections**. Headers 
 
 Example: `header-simple.blade.php`, `header-50-50-with-image.blade.php`, `section-standout-cta.blade.php`, `section-100.blade.php`, `section-product-list.blade.php` etc.
 
-# 4. How to create a new section?
-In order to create a new section, you should go to `resources/views/Website/Sections` folder and create a new PHP template file with a proper name following the naming convention, for example: `section-standout-cta.blade.php`. First of all, you should copy & paste the HTML code responsible for the section from front-end HTML page into that blade template.
+# 4. How to create a new section or header?
+In order to create a new section, you should go to `resources/views/Website/Sections` folder and create a new PHP template file with a proper name following the naming convention, for example: `section-standout-cta.blade.php` or `header-hello-world.blade.php`. First of all, you should copy & paste the HTML code responsible for the section from front-end HTML page into that blade template.
 
 Next step is to create the section type for Alfred Users so they can edit the fields.
 
-In newer Alfred version, in the `resources/views/Website/Sections/jsons` folder, you should create a JSON file with exactly the same name as the section, example: `section-standout-cta.json`. In older Alfred versions, you should just log in to Alfred and go to **Settings → Section templates** and find the **section-standout-cta** template and click it so you can edit the JSON settings directly within Alfred. Below you can find a sample JSON settings of one of the settings.
+In newer Alfred version, in the `resources/views/Website/Sections/jsons` folder, you should create a JSON file with exactly the same name as the section, example: `section-standout-cta.json`. In older Alfred versions, you should just log in to Alfred and go to **Settings → Section templates** and find the **section-standout-cta** template and click it so you can edit the JSON settings directly within Alfred. Below you can find sample JSON settings of one of the settings.
 
 ```
 {

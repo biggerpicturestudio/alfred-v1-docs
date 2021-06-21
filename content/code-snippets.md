@@ -86,14 +86,28 @@ This example shows a full demo of section fields that use different, useful micr
             "type": "form-selection",
             "label": "Form"
         },
-        "footer": {
+        "logo_component": {
             "order": 14,
+            "type": "custom-component",
+            "label": "Assign component",
+            "options": [
+                {
+                    "label": "Choose component"
+                },
+                {
+                    "label": "Logos",
+                    "value": "logos"
+                }
+            ]
+        },
+        "footer": {
+            "order": 15,
             "type": "section-modal",
             "modal_type": "content-insertion",
             "label": "Footer"
         },
         "section_anchor": {
-            "order": 15,
+            "order": 16,
             "label": "Section anchor",
             "type": "input"
         }
@@ -377,7 +391,7 @@ Please remember to embed image in every section with lazy loading! This example 
 {!! Imgix::getSingleURL($components->some_path_to_file) !!}
 ```
 
-## Example how to call a component facade
+### Example how to call a component facade
 
 ```
 @if (!empty($components->people->id))
