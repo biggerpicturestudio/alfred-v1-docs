@@ -377,6 +377,18 @@ Please remember to embed image in every section with lazy loading! This example 
 {!! Imgix::getSingleURL($components->some_path_to_file) !!}
 ```
 
+## Example how to call a component facade
+
+```
+@if (!empty($components->people->id))
+    {!! \Website\Component::people(
+        $components->people->id, 
+        'component-blade-template-name', 
+        ['someExtraVariableAvailableInTemplate' => 'test']
+    ) !!}
+@endif
+```
+
 ### Example of buttons implementation
 
 ```

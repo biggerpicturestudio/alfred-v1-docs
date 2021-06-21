@@ -1,32 +1,9 @@
 ---
 title: "Content Modules"
-metaTitle: "This is the title tag of this page"
-metaDescription: "This is the meta description"
+metaTitle: "Content Modules"
+metaDescription: ""
 ---
 
-Some introduction text. Lists out all the headings from h1 to h6. Easy to customise.
+The main modules that you can find in Alfred CMS are the **Homepage** and **Pages**. You can also create other ones such as News, Resources, Events and so on (all depends on the project needs). However all of them are based on the Pages though! As you have read before, all the pages are based on the `pages` database table. All the modules have their own controllers, sometimes their own services, however all of them call or extend the Pages Service, use one Pages model etc.
 
-# Heading H1
-Heading 1 text
-
-## Heading H2
-Heading 2 text
-
-### Heading H3
-Heading 3 text
-
-#### Heading H4
-Heading 4 text
-
-##### Heading H5
-Heading 5 text
-
-###### Heading H6
-Heading 6 text
-
-## Lists
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+Please see official Alfred Bitbucket repositories with ready-to-use content modules that you can easily install in your project.

@@ -1,32 +1,34 @@
 ---
 title: "Components"
-metaTitle: "This is the title tag of this page"
-metaDescription: "This is the meta description"
+metaTitle: "Components"
+metaDescription: ""
 ---
 
-Some introduction text. Lists out all the headings from h1 to h6. Easy to customise.
+Components are elements of a website managed out of typical section edit and **their content is saved as records in database tables**. Their main goal is to make them reusable in many other places on the website (e.g. the same content (such as logos) displayed in many sections across the whole website, managed in one place, saved as the database records. 
 
-# Heading H1
-Heading 1 text
+Components can be attached to sections through a “custom-component” microcomponent (please see the micro component’s description).
 
-## Heading H2
-Heading 2 text
+They do not have Save as Draft / Publish functions - everything that is saved / changed in some component is immediately visible on the website.
 
-### Heading H3
-Heading 3 text
+Alfred CMS has several ready types of components to use. Each of them can be easily adjusted to project needs (feel free to add new table columns, new fields, options etc.).
 
-#### Heading H4
-Heading 4 text
+To enable a component type, you need to edit the `config/cms.php` configuration file. There is `"components"` section where you can add / remove component types. Based on the list, in Alfred, if you go to the Components module (left hand side menu) and go to add a new component, in the “Type” list you will see the available component types.
 
-##### Heading H5
-Heading 5 text
+Backend of components for the Alfred panel can be managed in the `app/Cms/Modules/Components`. There is a business logic in them and feel free to edit that.
 
-###### Heading H6
-Heading 6 text
+Frontend of components for Alfred panel can be managed in the `resources/cmsassets/_ng/Components`. Every component type has “create” and “edit” forms that you can change too!
 
-## Lists
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+To display component’s content on front page, in the section blade template, you need to call a specific facade responsible for component type. Business logic and methods that you can call from blade template level are visible in `app/Website/Services/ComponentService.php`.
+
+## Example how to call a component facade
+```
+@if (!empty($components->people->id))
+    {!! \Website\Component::people(
+        $components->people->id, 
+        'component-blade-template-name', 
+        ['someExtraVariableAvailableInTemplate' => 'test']
+    ) !!}
+@endif
+```
+
+The `people()` method is located in the `app/Website/Services/ComponentService.php`. Please open the file and look through the methods - the method parameters are clear and easy to use. Of course feel free to modify them if you need.

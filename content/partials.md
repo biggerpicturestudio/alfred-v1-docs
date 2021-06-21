@@ -1,32 +1,9 @@
 ---
 title: "Partials"
-metaTitle: "This is the title tag of this page"
-metaDescription: "This is the meta description"
+metaTitle: "Partials"
+metaDescription: ""
 ---
 
-Some introduction text. Lists out all the headings from h1 to h6. Easy to customise.
+The Partials module is based on the `settings` table in the database. Whichever fields you create in that module, it will automatically be created in the settings table. 
 
-# Heading H1
-Heading 1 text
-
-## Heading H2
-Heading 2 text
-
-### Heading H3
-Heading 3 text
-
-#### Heading H4
-Heading 4 text
-
-##### Heading H5
-Heading 5 text
-
-###### Heading H6
-Heading 6 text
-
-## Lists
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+**Example: you need to create a textarea field that will be used for the copyright text in the footer.** So the only one thing you need to do is to create the field with some unique field name (such as „copyright_text”) in the Partials module in the HTML and then just save some data through that field. Then on front page you should just display the text using the `$settings` dataset variable using that index (for example `$settings['copyright_text']`).

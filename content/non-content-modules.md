@@ -1,32 +1,9 @@
 ---
 title: "Non-content Modules"
-metaTitle: "This is the title tag of this page"
-metaDescription: "This is the meta description"
+metaTitle: "Non-content Modules"
+metaDescription: ""
 ---
 
-Some introduction text. Lists out all the headings from h1 to h6. Easy to customise.
+Non-content modules are those ones that **are not responsible for content creation**. Perfect example of a non-content module could be the **Forms** module that just stores the form submissions from a website and gives Alfred Users an ability to manage them.
 
-# Heading H1
-Heading 1 text
-
-## Heading H2
-Heading 2 text
-
-### Heading H3
-Heading 3 text
-
-#### Heading H4
-Heading 4 text
-
-##### Heading H5
-Heading 5 text
-
-###### Heading H6
-Heading 6 text
-
-## Lists
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+If you need to create a new module and its purpose is something different than content creation, remember to set the **contentModule** setting in `config/cms.php` file to `false`.
