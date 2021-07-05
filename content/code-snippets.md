@@ -299,13 +299,13 @@ Please remember to embed images in every header without lazy loading!
     {!! Imgix::imageCustom
         (
             $components, 
-            'image', // key of $components object under which there is path to image saved
-            'image_alt', // alt text (can be any other key from $components)
-            'full-width-image', // key from config/srcset-settings.php -> section_settings
-            '', // specify CSS class added to <img> if needed
+            'image', /* key of $components object under which there is path to image saved */
+            'image_alt', /* alt text (can be any other key from $components) */
+            'full-width-image', /* key from config/srcset-settings.php -> section_settings */
+            '', /* specify CSS class added to <img> if needed */
             'image-no-lazy', 
             [
-                'preloadImageOfIndex' => [0] // image's index (from image sourceset within config/srcset-settings.php) that should be preloaded
+                'preloadImageOfIndex' => [0] /* image's index (from image sourceset within config/srcset-settings.php) that should be preloaded */
             ]
         ) 
     !!}
@@ -320,10 +320,10 @@ Please remember to embed image in every section with lazy loading!
     {!! Imgix::imageCustom
         (
             $components, 
-            'image', // key of $components object under which there is path to image saved
-            'image_alt', // alt text (can be any other key from $components)
-            'full-width-image', // key from config/srcset-settings.php -> section_settings
-            '', // specify CSS class added to <img> if needed
+            'image', /* key of $components object under which there is path to image saved */
+            'image_alt', /* alt text (can be any other key from $components) */
+            'full-width-image', /* key from config/srcset-settings.php -> section_settings */
+            '', /* specify CSS class added to <img> if needed */
             'image'
         ) 
     !!}
@@ -338,10 +338,10 @@ Please remember to embed image in every section with lazy loading! This example 
     {!! Imgix::imageCustom
         (
             $components, 
-            'image', // key of $components object under which there is path to image saved
-            'image_alt', // alt text (can be any other key from $components)
-            'full-width-image', // key from config/srcset-settings.php -> section_settings
-            '', // specify CSS class added to <img> if needed
+            'image', /* key of $components object under which there is path to image saved */
+            'image_alt', /* alt text (can be any other key from $components) */
+            'full-width-image', /* key from config/srcset-settings.php -> section_settings */
+            '', /* specify CSS class added to <img> if needed */
             'image-aspect'
         ) 
     !!}
@@ -353,7 +353,7 @@ Please remember to embed image in every section with lazy loading! This example 
 ```
 @if (!empty($components->bg_image))
     @php
-        $sectionID = 'header-' . (!empty($sectionIndex) ? $sectionIndex : '0') . '-' . time(); // feel free to amend this section ID as you want
+        $sectionID = 'header-' . (!empty($sectionIndex) ? $sectionIndex : '0') . '-' . time(); /* feel free to amend this section ID as you want */
         $imgixBackgroundStyle = Imgix::imageBackground($components, 'bg_image', 'full-width-image', ['sectionID' => $sectionID]);
     @endphp
 
@@ -372,7 +372,7 @@ Please remember to embed image in every section with lazy loading! This example 
 ```
 @if (!empty($components->bg_image))
     @php
-        $sectionID = 'section-' . (!empty($sectionIndex) ? $sectionIndex : '0' ) . '-' . time(); // feel free to amend this section ID as you want
+        $sectionID = 'section-' . (!empty($sectionIndex) ? $sectionIndex : '0' ) . '-' . time(); /* feel free to amend this section ID as you want */
         $imgixBackgroundStyle = Imgix::imageBackground($components, 'bg_image', 'full-width-image', ['sectionID' => $sectionID]);
     @endphp
 
