@@ -1,32 +1,35 @@
 ---
 title: "Microcomponents"
-metaTitle: "This is the title tag of this page"
-metaDescription: "This is the meta description"
+metaTitle: "Microcomponents"
+metaDescription: ""
 ---
 
-Some introduction text. Lists out all the headings from h1 to h6. Easy to customise.
+In the ***cmsassets/_ng/templates/templates.tpl.html*** there are all microcomponents that can be used across section type JSON settings. Every field in any section has a `type` property and has its reflection of some microcomponent ID. 
 
-# Heading H1
-Heading 1 text
+Example: if you want to add an input field in a section, the type should be *input* and it is an `input` microcomponent from ***cmsassets/_ng/templates/templates.tpl.html***. 
 
-## Heading H2
-Heading 2 text
+# Default microcomponents
 
-### Heading H3
-Heading 3 text
+## input
+It is a text-only field, perfect to be used for headlines or other **one-line text** areas on website.
 
-#### Heading H4
-Heading 4 text
+#### Preview:
+<img src="/microcomponent-input.png" alt="Microcomponent: input" />
 
-##### Heading H5
-Heading 5 text
+#### JSON configuration example
+```
+"some_field": {
+    "order": 1,
+    "type": "input",
+    "label": "Some field's label here"
+}
+```
 
-###### Heading H6
-Heading 6 text
+#### Example of implementation in a section
+```
+@if (!empty($components->some_field))
+    <h1>{{ $components->some_field }}</h1>
+@endif
+```
 
-## Lists
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+<hr />
