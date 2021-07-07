@@ -4,16 +4,16 @@ metaTitle: "Alfred Structure"
 metaDescription: ""
 ---
 
-Alfred is based on Content Modules, Headers, Sections, Micro-components, Components, Menus, Partials, Settings, User Authentication & Authorisation. 
+Alfred is based on **Content Modules**, **Headers / Sections**, **Microcomponents**, **Components**, **Menus**, **Partials**, **Settings**, **User Authentication & Authorisation**. 
 
-Content modules’ goal is content creation in Alfred and displaying on front page.
+**Content modules’** goal is content creation in Alfred and displaying on front page.
 
-Content is created using Headers, Sections and special micro-components that give Alfred Users an easy interface to edit the content. 
+Content is created using **Headers, Sections** and **special microcomponents** that give Alfred Users an easy interface to edit the content. 
 
-Components are smaller units of content that can be repeated across multiple sections (they have their own database tables). 
+**Components** are smaller units of content that can be repeated across multiple sections (they have their own database tables). 
 Partials are universal layout settings or data (such as phone number, email, map coordinates, company address etc.) that can be displayed wherever you want. 
 
-System Settings is a module where you can set up new Alfred Users, user groups and the user privileges, sections, redirects, languages etc. - „just” general system/website settings.
+**System Settings** is a module where you can set up new Alfred Users, user groups and the user privileges, sections, redirects, languages etc. - „just” general system/website settings.
 Business logic of project based on Alfred is split into 2 main folders within app/ directory: Cms and Website. If you want to make some changes on front page - add/edit files in the Website folder. If you want to modify something in the Alfred (admin area) - go to Cms folder. 
 
 You can also find folder like InternalModules . The idea behind it is to have a global place which is used by both cms and website side (it is a common thing that the same model could be used both on website/front page and in the cms). 
@@ -32,7 +32,7 @@ PHP Templates (blade templates) - they exist in the resources/views directory. L
 Alfred (as an admin panel) is written with AngularJS as mentioned previously. Every action which takes place in the panel (such as admin creation, editing, removing and so on) calls Alfred internal API (open DevTools on your browser and start clicking through panel to see what happens). That way, in Angular we send or consume the data and present them as an action in panel.
 
 Angular stuff - editable through `cms-backend/resources/cmsassets/_ng` folder. The HTML views can be edited „as is” and the changes are visible immediately in Alfred (no code compilation needed). More advanced changes in the JS files require the code compilation. Then running the grunt commands is needed to compile the code:
-- If you edit some JS files and you want to see the changes while editing them: run command from cms-backend folder;:
+- If you edit some JS files and you want to see the changes while editing them: run command from cms-backend folder:
 `grunt dev:cms`
 - If you have finished editing the JS files and you want to recompile the AngularJS things, run command:
 `grunt prod:cms`

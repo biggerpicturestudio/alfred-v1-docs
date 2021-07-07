@@ -7,7 +7,7 @@ metaDescription: ""
 # 1. Introduction & idea
 Every page created in Alfred is based on Section Builder thanks to that Alfred Users can create sections/headers and manage content. Every section type has several dedicated fields where user can put content. 
 
-For example: if the design of some section has headline, text and buttons - those 3 types of content should be reflected by dedicated fields in section for Alfred Users, represented by Microcomponents. In many cases, due to custom design of many sections, it is required to create **Custom Microcomponents** in order to give Alfred Users an easy way to manage content and to meet the requirements of some section design.
+For example: if the design of some section has headline, text and buttons - those 3 types of content should be reflected by dedicated fields in section for Alfred Users, represented by **microcomponents**. In many cases, due to custom design of many sections, it is required to create **custom microcomponents** in order to give Alfred Users an easy way to manage content and to meet the requirements of some section design.
 
 ## 1.1. Example of section design
 <img src="/section-example.png" alt="Example of section design." />
