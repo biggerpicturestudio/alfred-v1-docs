@@ -6,7 +6,15 @@ metaDescription: ""
 
 In the ***cmsassets/_ng/templates/templates.tpl.html*** there are all microcomponents that can be used across section type JSON settings. Every field in any section has a `type` property and has its reflection of some microcomponent ID. 
 
-Example: if you want to add an input field in a section, the type should be *input* and it is an `input` microcomponent from ***cmsassets/_ng/templates/templates.tpl.html***. 
+### Example
+If you want to add an input field in a section, the type should be *input* and it is the `input` microcomponent from ***cmsassets/_ng/templates/templates.tpl.html***. 
+
+In this example (of the section JSON settings), the `type` is **input**...
+<img src="/microcomponent-type-as-id-section-settings.png" alt="" />
+
+...and it means that it uses the `input` microcomponent from ***cmsassets/_ng/templates/templates.tpl.html*** file. The microcomponent name has a following scheme in the HTML file: `component-<NAME OF MICROCOMPONENT>`
+<img src="/microcomponent-type-example.png" alt="" />
+
 
 # Default microcomponents:
 
@@ -59,7 +67,7 @@ It is a text-only field and its purpose is **multi-line text** edit. Remember to
 <hr />
 
 # select
-It is a dropdown list to select one of the available options. It is extremely helpful microcomponent to be used for example for colour selection, icons and many many more.
+It is a dropdown list to select one of the available options. It is extremely helpful microcomponent to be used to give Alfred Users the ability to choose some option, setting, variant etc.
 
 * #### Preview:
 <img src="/microcomponent-select.png" alt="Microcomponent: select" />
@@ -140,7 +148,7 @@ It is the WYSIWYG editor that generates HTML code.
 }
 ```
 
-You can also use `options` property - its value will point to a different than basic TinyMCE configuration (see `cmsassets/_ng/services/PageFactory.js`). By default, there are 2 options: *default* (all options) and *basic* (only basic text edit options).
+You can also use `options` property - its value will point to a different than the full TinyMCE configuration (see `cmsassets/_ng/services/PageFactory.js`). By default, there are 2 options: *default* (all options, full configuration) and *basic* (only basic text edit options).
 
 ```
 "some_field": {
@@ -220,7 +228,7 @@ All the options in this popup (see `cmsassets/_ng/Pages/pages-section-settings-m
 ```
 
 * #### Example of implementation in a section
-Pay attention to this example. If Section Settings popup gives an ability to set container size, padding size, font colour etc. - all the options should be working and reflected in the HTML code of the section. Full example below.
+Pay attention to this example. If Section Settings popup gives an ability to set container size, padding size, font colour etc. - all the options should be working and reflected in the HTML code of the section. Full example below - take a look at all the `@include()` that populate the HTML code in specfic places.
 ```
 <section 
     class="
@@ -258,7 +266,7 @@ It is also possible to disable some of the options if are not needed. Example be
 }
 ```
 
-This way the Section Settings popup will no present any options for Container Size, Vertical alignment option or padding sizes.
+This way the Section Settings popup will not present any options for Container Size, Vertical alignment option or padding sizes.
 
 <hr />
 
@@ -635,6 +643,21 @@ Sometimes you may want to inform Alfred Users about something in the section (so
 Sometimes in the sections there might be some special elements that are impossible or hard to be built using the default microcomponents. The most common case is a section that contains repeating (looped) elements, where you need to give to Alfred Users an ability to add multiple elements. 
 
 Feel free to add your custom microcomponents in the `cmsassets/_ng/templates/templates.tpl.html` and use them in the sections.
+
+### Creating custom microcomponents
+If you want to create a custom microcomponent such as <b>tiles</b>, please add the HTML code of the microcomponent to the `cmsassets/_ng/templates/templates.tpl.html` (the order of all `<script>` does not matter), as per the example below:
+
+```
+<script type="text/ng-template" id="component-tiles">
+    <div class="form-group">
+        <label>
+            <b>{{ component.label }}</b>
+        </label>
+
+        Your custom HTML code of the microcomponent here...
+    </div>
+</script>
+```
 
 Please visit our **Alfred Microcomponents** Collection repo (https://bitbucket.org/snowflakers/alfred-microcomponents) and use one of them or even customise them matching the project needs.
 
