@@ -33,7 +33,6 @@ const config = {
       '/micro-components',
       '/components',
       '/integrations',
-      '/imgix',
       '/menu',
       '/routing',
       '/partials',
