@@ -4,6 +4,8 @@ metaTitle: "Headers & Sections"
 metaDescription: ""
 ---
 
+**The concept of content management on pages in Alfred is to create dedicated sections/headers and fields within them rather than just one WYSIWYG editor.** Of course this kind of editor is also possible to be used but only in places where it is really needed, mainly as a text area in a single section. Try to give to Alfred User as many options as needed and at the same time lowerise the risk of destroying the site appearance as much as possible.
+
 # 1. Introduction & idea
 Every page created in Alfred is based on Section Builder thanks to that Alfred Users can create sections/headers and manage content. Every section type has several dedicated fields where user can put content. 
 
