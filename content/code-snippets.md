@@ -252,7 +252,9 @@ This header shows an example of configuration. It is just a demo so feel free to
 ```
 
 ```
-{!! HTML::fontSize($components->settings, 'text_size') !!}
+@if (!empty($components->settings))
+    {!! HTML::fontSize($components->settings, 'text_size') !!}
+@endif
 ```
 
 ### Example of a responsive video embed

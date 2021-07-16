@@ -29,7 +29,7 @@ Plain Alfred repo you can find here: https://bitbucket.org/snowflakers/alfred-v1
 1. Download the code and paste it into root of your project.
 2. Create a database (you can use PHPMyAdmin if you prefer) and import the `database.sql` file.
 3. In the `cms-backend/` folder create the `.env` file and paste the contents of `.env.example`. Enter the credentials, at least for the database connection.
-4. Install the PHP dependencies, running `composer install` in the terminal, from the `cms-backend/` location.
+4. Install the PHP dependencies, running `composer install` and then `php artisan key:generate` in the terminal, from the `cms-backend/` location.
 5. Run `php artisan serve` and you should be able to see the project and start developing.
 
 ### Installation & running project on Docker
@@ -40,7 +40,7 @@ Plain Alfred repo you can find here: https://bitbucket.org/snowflakers/alfred-v1
 4. Run `docker-compose up` from the root folder (you will see errors but do not worry about it for now - see next points).
 5. Copy the database file (`database.sql`) into database container* (`docker cp database.sql DATABASE_CONTAINER_NAME:/`)
 6. Connect to the database container* (`docker exec -it DATABASE_CONTAINER_NAME bash`); connect to MySQL service using `mysql -u MYSQL_USER -p` and import the database file into selected database (`source /database.sql`).
-7. Connect to backend container* (`docker exec -it BACKEND_CONTAINER_NAME bash`) and install the PHP dependencies, running `composer install`.
+7. Connect to backend container* (`docker exec -it BACKEND_CONTAINER_NAME bash`) and install the PHP dependencies, running `composer install` + `php artisan key:generate`.
 8. Once the dependencies are installed, you should be able to open the project at `http://0.0.0.0:8000` and start developing.
 
 &#42; if you do not know the container names, just run `docker ps` to find them out.
