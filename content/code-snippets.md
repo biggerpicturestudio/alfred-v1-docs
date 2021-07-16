@@ -255,10 +255,6 @@ This header shows an example of configuration. It is just a demo so feel free to
 {!! HTML::fontSize($components->settings, 'text_size') !!}
 ```
 
-```
-{!! HTML::fontColour($components, 'headline_colour') !!}
-```
-
 ### Example of a responsive video embed
 
 ```
