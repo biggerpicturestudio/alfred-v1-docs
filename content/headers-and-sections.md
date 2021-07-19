@@ -97,7 +97,7 @@ The sections are visible for Alfred Users in the **Add new section** option as o
 Sometimes, on pages such as single blog post, single case study etc. where the ability to set header is not needed, the Section Builder might look differently:
 <img src="/section-old-builder.png" alt="Alfred old Content Builder example" />
 
-As on the screenshot, there is no ability to set a header (because of website design and there’s no need for that) and the sections dropdown looks simpler. The sections do not have to have the “type” (the explanation what it is, is in the next section of this documentation) defined
+As on the screenshot, there is no ability to set a header (because of website design and there’s no need for that) and the sections dropdown looks simpler. The sections do not have to have the “type” defined (the explanation what it is you can find in the next section of this documentation).
 
 # 5. Explanation of the JSON settings
 1. **name** - it is the section name visible for Alfred Users in the section dropdown where they can choose a section.
@@ -113,7 +113,7 @@ Example for sections: `"type": "homepage"`, `"type": "page"`
 - **cms_width**: it is an optional settings thanks to which you can define layout of the fields in section for Alfred User; because Alfred panel uses Bootstrap Grid, the value for cms_width should represent number of specific column width following the Bootstrap Grid (12 column layout) - for example cms_width: 6 will display the field in 50% of section width (only for Alfred Users in that section!).
 
 # 6. General thoughts
-Creating new sections and their fields is back-end developers’ responsibilities. The index names should be clear and semantic. It is extremely important to remember about creating ‘if’ conditions in the front page blade templates to check if some index in the JSON content exists, before displaying its value.
+Creating new sections and their fields is developers’ responsibility. The index names should be clear and semantic. Please use the **snake_case** naming convention. It is extremely important to remember about creating ‘if’ conditions in the front page blade templates to check if some index in the JSON content exists, before displaying its value.
 
 ```
 @if (!empty($components->headline))
