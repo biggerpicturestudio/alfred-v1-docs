@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 metaTitle: "Installation"
-metaDescription: "T"
+metaDescription: ""
 ---
 
 # Prerequisites

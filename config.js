@@ -25,7 +25,7 @@ const config = {
   },
   sidebar: {
     forcedNavOrder: [
-      '/installation',
+      '/getting-started',
       '/overview',
       '/content-modules',
       '/non-content-modules',
