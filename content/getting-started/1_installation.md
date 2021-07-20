@@ -52,3 +52,10 @@ Please see the list of available ready-to-use modules on Bitbucket. Copy the cod
 - more modules soon...
 
 Extremely helpful repository you can also find here: https://bitbucket.org/snowflakers/alfred-microcomponents/src/master/. You can find there ready custom microcomponents that you can re-use and adjust to meet your project requirements.
+
+# Production deployment requirements
+- Nginx (preferrable) or Apache
+- PHP 7.4
+- MySQL 8.0 database (can be MariaDB)
+
+Useful information about setting up a production server to run Alfred project you can find here: https://bitbucket.org/snowflakers/server-nginx-configuration/src/master/. It is oriented to deployment to [DigitalOcean](https://www.digitalocean.com/) but lots of configuration instructions can be helpful for you even if you decide to launch your project even on totally different hosting provider.
