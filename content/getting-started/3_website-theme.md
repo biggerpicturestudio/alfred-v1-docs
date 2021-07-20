@@ -32,6 +32,10 @@ Front-end developer should code all the elements and an example of the coded ele
 Please follow the below steps in order to get the Website Theme implementation done in Alfred.
 
 # 1. Buttons
+Files that you have to edit:
+- `config/theme.php`
+- `cmsassets/_ng/directives/templates/buttons.tpl.html`
+
 Edit the `config/theme.php` file and find `buttons` array where there should be a list of all available button styles.
 
 ```
@@ -93,6 +97,10 @@ Once this is all done, in Alfred, if you create a header or section that uses th
 Sometimes the button's HTML code (because of custom design) requires special HTML changes. If this is the case in your project, just go to button template - `resources/views/Website/Templates/button.blade.php` - (used on front page of the website) and adjust the code it as you wish.
 
 # 2. Section padding sizes
+Files that you have to edit:
+- `config/theme.php`
+- `cmsassets/_ng/Pages/pages-section-settings-modal.tpl.html`
+
 Section padding sizes (top and bottom) should be created in the front-end code, using a CSS class naming convention as below:
 - `.section--p-extra-small-top`
 - `.section--p-large-bottom`
@@ -146,6 +154,11 @@ Again, the padding sizes should be selectable in Alfred, in the **Section Settin
 **Please always select some padding sizes and test them on the front page in terms of the selected option. Make sure it matches the original design/front-end code on the website.**
 
 # 3. Container sizes
+Files that you have to edit:
+- `config/theme.php`
+- `cmsassets/_ng/Pages/pages-section-settings-modal.tpl.html`
+- `cmsassets/_ng/Pages/pages-content-insertion-modal.tpl.html`
+
 Container size (width) should be always possible to be set via **Section Settings** microcomponent in Alfred.
 
 Before Alfred implementation, the CSS classes responsible for particular container width, should be prepared by front-end developer first. Examples of CSS classes (and the naming convention):
@@ -211,6 +224,13 @@ Please make the options as much clear for Alfred Users as possible - ideally if 
 **Please always select some container sizes and test them on the front page in terms of the selected option. Make sure it matches the original design/front-end code on the website.**
 
 # 4. Colours and background colours
+Files that you have to edit:
+- `config/theme.php`
+- `cmsassets/_ng/Pages/pages-section-settings-modal.tpl.html`
+- `cmsassets/_ng/Pages/pages-content-insertion-modal.tpl.html`
+- `cmsassets/_ng/templates/templates.tpl.html`
+- `cmsassets/_ng/services/PageFactory.js`
+
 It should be always possible for Alfred Users to set a background color of any section (or some particular element within it) or headline and text colour.
 
 In order to get the background colour or text colour options implemented in Alfred, go edit the `config/theme.php` and find the `colours` array. You should see nested arrays that are self-explanatory. Again - in order to find out about the CSS classes, please look into front-end/HTML code first, find the colour variants (background and text) and edit those arrays. All of them should be created and given for Alfred Users following the project specification.
@@ -270,6 +290,11 @@ Please remember about editing all the possible places (see the mentioned HTML fi
 The text colour options should be possible to be selected also via WYSIWYG editor. Please remember to apply project's CSS classes responsible for text colours in the `cmsassets/_ng/services/PageFactory.js` - find `availableTinymceOptions` where there are all available TinyMCE instances and in the `style_formats` you will see the **Text colour** options that should be edited by you, to match your project CSS options and their class names. Run `grunt prod:cms` from `cms-backend/` folder to compile the Alfred JS files after the changes.
 
 # 5. Headlines
+Files that you have to edit:
+- `config/theme.php`
+- `cmsassets/_ng/Pages/pages-content-insertion-modal.tpl.html`
+- `cmsassets/_ng/services/PageFactory.js`
+
 Website front-end layer that has to be integrated with Alfred should always present headline types (sizes) and these should be selectable in Alfred.
 
 The front-end CSS classes for the headlines should follow the naming convention as below:
