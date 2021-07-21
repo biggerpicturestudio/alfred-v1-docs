@@ -337,7 +337,7 @@ Next step is to follow the CSS classes and apply them into the `config/theme.php
 **See the example of font sizes configured:**
 ```
     'sizes' => [
-        'headline' => [
+        'font' => [
             0 => '',
             1 => 'content__small-text',
             2 => 'content__large-text',
