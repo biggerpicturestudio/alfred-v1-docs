@@ -97,3 +97,10 @@ The blade templates responsible for all the menus are located in: `cms-backend/r
     </ul>
 @endif
 ```
+
+## Partials
+It is a common case when in the top bar (navigation) or footer you can see **copyright text**, some standalone CTA button or social media links. 
+
+Place in Alfred where **the texts** or some custom buttons should be manageable is **Partials** module - please add fields to make them editable over there.
+
+Social Media links are manageable via **Settings -> Website Settings -> SEO** tab in Alfred. You can read more about in [Settings](/settings) page of this documentation how to get them implemented in website blade templates.
