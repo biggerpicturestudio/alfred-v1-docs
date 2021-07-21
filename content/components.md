@@ -6,7 +6,7 @@ metaDescription: ""
 
 Components are elements of a website managed out of typical section edit and **their content is saved as records in database tables**. Their main goal is to make them reusable in many other places on the website (e.g. the same content (such as logos) displayed in many sections across the whole website, managed in one place, saved as the database records. 
 
-Components can be attached to sections through a “custom-component” microcomponent (please see the micro component’s description).
+Components can be attached to sections through a `custom-component` microcomponent (please see the microcomponent’s description).
 
 They do not have Save as Draft / Publish functions - everything that is saved / changed in some component is immediately visible on the website.
 

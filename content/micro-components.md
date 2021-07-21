@@ -477,7 +477,7 @@ If you want to edit the padding options, go to `cmsassets/_ng/templates/template
 <hr />
 
 # container-sizes (Container Sizes)
-Sometimes there may be a case when you do not want to give all options to be set up in the Section Settings and give Alfred Users only single option such as container size selection. Using the container-sizes micro component will do the job then!
+Sometimes there may be a case when you do not want to give all options to be set up in the Section Settings and give Alfred Users only single option such as container size selection. Using the `container-sizes` microcomponent will do the job then!
 
 * #### Preview:
 <img src="/microcomponent-container-size.png" alt="Microcomponent: container sizes" />
