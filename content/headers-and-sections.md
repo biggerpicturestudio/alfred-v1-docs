@@ -239,3 +239,6 @@ Compare the original front-end code above.
     </div>
 </section>
 ```
+
+# 8. Default sections
+By default, Alfred has several built-in column sections (100%, 4x25%, 50%/50%, 60%/40% etc.). Please keep them unchanged if possible unless there is a real custom design need.
