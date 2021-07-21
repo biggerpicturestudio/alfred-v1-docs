@@ -162,9 +162,13 @@ You can also use `options` property - its value will point to a different than t
 * #### Example of implementation in a section
 ```
 @if (!empty($components->some_field))
-    {!! $components->some_field !!}
+    <div class="content">
+        {!! $components->some_field !!}
+    </div>
 @endif
 ```
+
+**Remember:** an overriding HTML element that contains the content coming from TinyMCE within it should always have the `content` CSS class. It guarantees correct appearance of text/lists/table that can be used by Alfred User in the WYSIWYG editor.
 
 <hr />
 

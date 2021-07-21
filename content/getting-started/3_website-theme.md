@@ -14,7 +14,6 @@ The Website Theme elements that always have to be prepared by front-end develope
 - colours and background colours
 - headlines
 - text/paragraph sizes
-- ordered/unordered lists (&lt;ul&gt;, &lt;ol&gt;)
 - forms and their fields
 
 Bear in mind, that once the theme options are configured in Alfred, in order to return the elements on front page in sections/headers in selected variant/colour/option, you need to know the [Microcomponents](/micro-components) and how to use them. Page [Code Snippets](/code-snippets) is also useful where you can find real examples of theme options implementation in the blade templates.
@@ -75,13 +74,10 @@ Go to `cmsassets/_ng/directives/templates/buttons.tpl.html` and edit the code re
 **See the example below:**
 
 ```
-    <label>Appearance:</label>
-    <select class="form-control" ng-model="row.css">
-        <option value="">Primary, light brown</option>
-        <option value="1">Primary, black</option>
-        <option value="2">Secondary, black</option>
-        <option value="3">Secondary, white</option>
-    </select>
+    <option value="">Primary, light brown</option>
+    <option value="1">Primary, black</option>
+    <option value="2">Secondary, black</option>
+    <option value="3">Secondary, white</option>
 ```
 
 **The default button style on this list should always have an empty value** (and in `theme.php` that default button style should be under the **0** array index)! All the other button variants and their values in this &lt;select&gt; should be exactly the same as the index numbers in the `config/theme.php`.
@@ -136,17 +132,12 @@ Again, the padding sizes should be selectable in Alfred, in the **Section Settin
 **See the example below:**
 
 ```
-    <select 
-        class="form-control" 
-        ng-model="sectionModal.section.components[sectionModal.sectionKey].padding_top"
-        name="padding_top">
-        <option value="5">No padding</option>
-        <option value="1">Extra small</option>
-        <option value="2">Small</option>
-        <option value="">Medium (default)</option>
-        <option value="3">Large</option>
-        <option value="4">Extra large</option>
-    </select>
+    <option value="5">No padding</option>
+    <option value="1">Extra small</option>
+    <option value="2">Small</option>
+    <option value="">Medium (default)</option>
+    <option value="3">Large</option>
+    <option value="4">Extra large</option>
 ```
 
 **Remember: the default padding size should get an empty value!** This way, on front page, none CSS class will be returned in the section class attribute and the correct front-end sizing should be just properly done by front-end developer in the front-end code. `.section` should get the default top/bottom padding as per design and it is front-end developer's responsibility to get it done correctly.
@@ -204,17 +195,13 @@ In both files, please find the &lt;select&gt; with the container options and edi
 **See the example below:**
 
 ```
-    <select 
-        class="form-control" 
-        ng-model="sectionModal.section.components[sectionModal.sectionKey].container_size" name="container_size">
-        <option value="1">Extra small - 1114px</option>
-        <option value="2">Small - 1480px</option>
-        <option value="">Medium - 1632px (default)</option>
-        <option value="3">Large - 1728px</option>
-        <option value="4">Extra large - 1824px</option>
-        <option value="5">Extra extra large - 1872px</option>
-        <option value="6">Fluid</option>
-    </select>
+    <option value="1">Extra small - 1114px</option>
+    <option value="2">Small - 1480px</option>
+    <option value="">Medium - 1632px (default)</option>
+    <option value="3">Large - 1728px</option>
+    <option value="4">Extra large - 1824px</option>
+    <option value="5">Extra extra large - 1872px</option>
+    <option value="6">Fluid</option>
 ```
 
 Please make the options as much clear for Alfred Users as possible - ideally if next to the container size name there is also width in px.
@@ -263,17 +250,11 @@ Next step is to edit the following files:
 
 **Example:**
 ```
-    <select
-        class="form-control"
-        ng-model="sectionModal.section.components[sectionModal.sectionKey].headline_colour"
-        name="headline_colour"
-        >
-        <option value="">Default</option>
-        <option value="1">White</option>
-        <option value="2">Black</option>
-        <option value="3">Light brown</option>
-        <option value="4">Paragraph black</option>
-    </select>
+    <option value="">Default</option>
+    <option value="1">White</option>
+    <option value="2">Black</option>
+    <option value="3">Light brown</option>
+    <option value="4">Paragraph black</option>
 ```
 
 **Please remember that the default option (no colour selected) should be just empty.**
@@ -333,3 +314,52 @@ The option values should match the array index numbers from the config file.
 The headline type options should be possible to be selected also via WYSIWYG editor. Please remember to apply project's CSS classes responsible for headlines in the `cmsassets/_ng/services/PageFactory.js` - find `availableTinymceOptions` where there are all available TinyMCE instances and in the `style_formats` you will see the **Headlines** options that should be edited by you, to match your project CSS options and their class names. Run `grunt prod:cms` from `cms-backend/` folder to compile the Alfred JS files after the changes.
 
 <img src="/tinymce-headline-options.png" alt="TinyMCE headline sizes" />
+
+# 6. Text/paragraph sizes
+Files that you have to edit:
+- `config/theme.php`
+- `cmsassets/_ng/Pages/pages-content-insertion-modal.tpl.html`
+- `cmsassets/_ng/Pages/pages-section-settings-modal.tpl.html`
+
+In **Section Settings** and **Header/Footer** microcomponents it is possible to choose the text/font size. Different content font sizes (within the scoped `.content` CSS class) should be prepared by front-end developer in the Website Theme first.
+
+The front-end CSS classes for the text sizes should follow the naming convention as below:
+- `.content__small-text`
+- `.content__large-text`
+- and so on...
+
+To get the text sizes implemented in Alfred, start from looking into the front-end code where all the content size variants should be presented and see what CSS classes are represented by them.
+
+Next step is to follow the CSS classes and apply them into the `config/theme.php`, in the `font` array under `sizes` set. Please keep the first array element empty as it represents the default font size (this way no CSS class will be returned on front page).
+
+**See the example of font sizes configured:**
+```
+    'sizes' => [
+        'headline' => [
+            0 => '',
+            1 => 'content__small-text',
+            2 => 'content__large-text',
+        ],
+    ]
+```
+
+Next step is to find &lt;select&gt; with font size options in Alfred microcomponents such as `cmsassets/_ng/Pages/pages-content-insertion-modal.tpl.html` and apply the specific variants. 
+
+**Example below:**
+```
+    <option value="1">Small</option>
+    <option value="">Normal (default)</option>
+    <option value="2">Large</option>
+```
+
+The same, please apply to `pages-section-settings-modal.tpl.html` where the **Text size** dropdown is.
+
+# 7. Forms and their fields
+All the contact forms in Alfred can be created via **Forms** module. Several options in the module such as creating the fields, setting up a layout of them (100% or 50%/50% columns) cause a need of preparing the front-end code dictated by Alfred Forms HTML. Please keep the front-end code of Alfred Forms templates unchanged (in `resources/views/Website/Alfred-Form-Builder/**/*.php`). If custom design requires some changes, please discuss it with front-end developer and try to make any custom apperance only via CSS.
+
+If there is no chance to get it done this way, feel free to edit the form templates (`resources/views/Website/Alfred-Form-Builder/**/*.php`), **however after all the changes please make sure it all works fine.**
+
+# Last step: CSS styles for TinyMCE editor
+Colours, headlines, lists etc. in TinyMCE need to have some styling in order to display them correctly in the editor. Front-end developer should prepare & copy the CSS code needed only for them in the `resources/cmsassets/_scss/tinymce.scss`. Do not worry about font face (can be default Arial), ideally matched font size etc. - editor should only match the real front page design as much as possible but it never will be the same look & feel. 
+
+Once this is done, please run `grunt prod:cms` from the `cms-backend/` folder in order to compile the files. From now, the TinyMCE editor will be displaying the styles within it visually correctly for Alfred Users.
