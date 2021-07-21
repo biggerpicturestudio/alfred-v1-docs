@@ -172,6 +172,7 @@ Let's look into a standard example of section front-end code that you have to cr
 In order to turn this code as a Alfred section that should be editable via Alfred, you need to read the CSS classes and HTML elements to understand what and where should happen. **You have to replace some of the original CSS classes and elements prepared in the front-end code with represented microcomponents' code that will be responsible for returning the particular settings and make the look & feel matching the design.**
 
 **See example of correct implementation in Alfred section blade template below:**
+Compare the original front-end code above.
 
 ```
 <section 
