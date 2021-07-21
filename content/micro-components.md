@@ -272,6 +272,8 @@ It is also possible to disable some of the options if are not needed. Example be
 
 This way the Section Settings popup will not present any options for Container Size, Vertical alignment option or padding sizes.
 
+**If you wish to return single CSS classes responsible for some setting (such as padding, text colour), not via the `@include()` methods - go to [Code Snippets](/code-snippets) page where you can find lots of examples how to get it done.**
+
 <hr />
 
 # btns (Buttons)

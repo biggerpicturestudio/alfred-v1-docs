@@ -40,7 +40,7 @@ Example: `header-simple.blade.php`, `header-50-50-with-image.blade.php`, `sectio
 # 4. How to create a new section or header?
 In order to create a new section, you should go to `resources/views/Website/Sections` folder and create a new PHP template file with a proper name following the naming convention, for example: `section-standout-cta.blade.php` or `header-hello-world.blade.php`. First of all, you should copy & paste the HTML code responsible for the section from front-end HTML page into that blade template.
 
-Next step is to create the section type for Alfred Users so they can edit the fields.
+Next step is to create the section type for Alfred Users so they can edit the fields. **You can use the full example of section/header JSON configuration from [Code Snippets](/code-snippets) and just adjust it to your needs.**
 
 In newer Alfred version, in the `resources/views/Website/Sections/jsons` folder, you should create a JSON file with exactly the same name as the section, example: `section-standout-cta.json`. In older Alfred versions, you should just log in to Alfred and go to **Settings → Section templates** and find the **section-standout-cta** template and click it so you can edit the JSON settings directly within Alfred. Below you can find sample JSON settings of one of the settings.
 
@@ -109,7 +109,7 @@ Example for sections: `"type": "homepage"`, `"type": "page"`
 5. **components** - it is a list of all the fields visible for Alfred User in a section that user can edit; every element of the list defines one field; the element index name is the index under which the value of that field (what user edits) will be saved in the dev_content / content JSON and you can retrieve the value on front page in specific section blade template under that index too. Below you can find the settings per each field:
 - **order**: it defines the order of fields in a section in Alfred
 - **label**: it is the headline / label which should help Alfred User what the field represents.
-- **type**: it is the name of micro component name which the field uses to display for Alfred User; please see Micro Components section;
+- **type**: it is the name of microcomponent name which the field uses to display for Alfred User; please see **Microcomponents** section;
 - **cms_width**: it is an optional settings thanks to which you can define layout of the fields in section for Alfred User; because Alfred panel uses Bootstrap Grid, the value for cms_width should represent number of specific column width following the Bootstrap Grid (12 column layout) - for example cms_width: 6 will display the field in 50% of section width (only for Alfred Users in that section!).
 
 # 6. General thoughts
@@ -134,3 +134,107 @@ Creating new sections and their fields is developers’ responsibility. The inde
 ```
 
 **Remember that fields in any section could NOT be filled out by a user and always test on the front page how the section elements look on the front page when some of the fields are empty. This way you will notice that the ‘if’ conditions should sometimes be round whole elements (as in the example above - the &lt;h2&gt; is ‘if-ed’ as a whole thing, instead of ‘if’ inside the &lt;h2&gt;).**
+
+# 7. Front-end code implementation in the section/header blade templates
+Let's look into a standard example of section front-end code that you have to create a section, selectable in Alfred, for:
+
+```
+<section class="section section--p-extra-small-top bg-white">
+    <div class="container-s">
+        <div class="row row--g-24 row--no-pb align-items-center content">
+            <div class="col-lg-4 content__large-text text-center text-lg-left">
+                <h2 class="headline-3">Some headline</h2>
+
+                <p>This is <strong>some text</strong></p>
+
+                <a href="" title="" class="btn btn--primary btn--mt btn--cream">
+                    CTA button
+                </a> 
+            </div>
+
+            <div class="col-lg-7 offset-lg-1">
+
+                <figure class="image-frame image-frame--landscape">
+                    <source srcset="/images/tmp/smart-storage-min.png?w=500" media="(max-width: 499px)">
+                        <source srcset="/images/tmp/smart-storage-min.png?w=768" media="(min-width: 500px) and (max-width: 767px)">
+                        <source srcset="/images/tmp/smart-storage-min.png?w=920" media="(min-width: 768px) and (max-width: 991px)">
+                        <source srcset="/images/tmp/smart-storage-min.png?w=640" media="(min-width: 992px) and (max-width: 1119px)">
+                        <source srcset="/images/tmp/smart-storage-min.png?w=840" media="(min-width: 1200px)">
+    
+                    <img class="image-frame__image-abs lazy" data-src="/images/tmp/smart-storage-min.png" width="828" height="538"  alt="">
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+```
+
+In order to turn this code as a Alfred section that should be editable via Alfred, you need to read the CSS classes and HTML elements to understand what and where should happen. **You have to replace some of the original CSS classes and elements prepared in the front-end code with represented microcomponents' code that will be responsible for returning the particular settings and make the look & feel matching the design.**
+
+**See example of correct implementation in Alfred section blade template below:**
+
+```
+<section 
+    class="
+        section
+        @include('Website.Sections.columns-sections-partials.section-settings')
+    ">
+    @include('Website.Sections.columns-sections-partials.background')
+
+    @include('Website.Sections.columns-sections-partials.overlay')
+
+    <div class="@include('Website.Sections.columns-sections-partials.container-settings')">
+        <div 
+            class="
+                row 
+                row--g-24 
+                row--no-pb 
+                align-items-center 
+                content
+                @include('Website.Sections.columns-sections-partials.row-settings')
+            ">
+
+            <div 
+                class="
+                    col-lg-4 
+                    @if (!empty($components->settings))
+                        {!! HTML::fontSize($components->settings, 'text_size') !!}
+                    @endif
+                    text-center 
+                    text-lg-left
+                ">
+                @if (!empty($components->headline))
+                    <h2 class="headline-3">
+                        {{ $components->headline }}
+                    </h2>
+                @endif
+
+                @if (!empty($components->text))
+                    {!! $components->text !!}
+                @endif
+
+                @if (!empty($components->btns))
+                    @foreach($components->btns as $btn)
+                        {!! HTML::button($btn) !!}
+                    @endforeach
+                @endif
+            </div>
+
+            <div class="col-lg-7 offset-lg-1">
+                @if (!empty($components->image))
+                    {!! Imgix::imageCustom
+                        (
+                            $components, 
+                            'image',
+                            'image_alt',
+                            'semi-full-width-image',
+                            'image-frame__image-abs',
+                            'image-lazy'
+                        ) 
+                    !!}
+                @endif
+            </div>
+        </div>
+    </div>
+</section>
+```

@@ -4,7 +4,7 @@ metaTitle: "Module & Component Setup"
 metaDescription: ""
 ---
 
-Once Alfred is installed, you need to set up & configure **modules** and **components** that will be used in a project.
+Once Alfred is installed, you need to set up & configure at least **modules** first that will be used in a project. **Components** (that are related to sections) can be configured later.
 
 Modules’ and components’ configuration can be found in the `config/cms.php` file. 
 
@@ -51,87 +51,7 @@ If you want to create your own module, please copy the module configuration abov
 - `visibleInCmsMenu` (boolean): based on this setting, the module will be visible in the left menu of Alfred. 
 - `route` (string): it is the AngularJS route to the module, specified in the `routes.js` of every AngularJS module.
 - `cssClass` (string): it is the CSS class responsible for the icon displaying in the left Alfred menu; the icons come from  [Glyphicons](https://getbootstrap.com/docs/3.3/components/).
-- `restrictedMethods` (array): the methods that you want to control in the **Settings -> Groups** when adding / editing some user group; all the options are shown over there as the checkboxes and should be perceived as the permissions within the module; feel free to declare the method names here and then in the module controllers, you can check the permissions as per example: 
-
-```if ($this->user->hasAccess('<MODULE NAME>.<RESTRICTED METHOD NAME>')) {```
-
-Real example of Blog module controller with restricted methods:
-
-```
-<?php
-
-namespace Cms\Modules\Blog\Controllers;
-
-use Cms\Controllers\ApiSimpleController;
-use Sentinel;
-
-class ApiController extends ApiSimpleController
-{
-    protected $user;
-
-    public function __construct()
-    {
-        $this->user = Sentinel::getUser();
-    }
-
-    public function index()
-    {
-        if ($this->user->hasAccess('Blog.index')) {
-            ...
-        } else {
-            abort(401);
-        }
-    }
-
-    public function store()
-    {
-        if ($this->user->hasAccess('Blog.store')) {
-            ...
-        } else {
-            abort(401);
-        }
-    }
-
-    public function edit($id)
-    {
-        if ($this->user->hasAccess('Blog.index')) {
-            ...
-        } else {
-            abort(401);
-        }
-    }
-
-    public function publish()
-    {
-        if ($this->user->hasAccess('Blog.publish')) {
-            ...
-        }
-    }
-
-    public function update($id)
-    {
-        if ($this->user->hasAccess('Blog.categories')) {
-            ...
-        } else {
-            abort(401);
-        }
-    }
-
-    public function restore()
-    {
-        if ($this->user->hasAccess('Blog.update')) {
-            ...
-        }
-    }
-
-    public function destroy($id)
-    {
-        if ($this->user->hasAccess('Blog.destroy')) {
-            ...
-        }
-    }
-}
-```
+- `restrictedMethods` (array): the methods that you want to control in the **Settings -> Groups** when adding / editing some user group; all the options are shown over there as the checkboxes and should be perceived as the permissions within the module; 
 
 - `contentModule` (boolean): modules can be content or non-content; it should be `true` if the module’s purpose is the content creation; all other purposes - `false`.
 - `nameModule` (string): it is needed for highlighting the left menu link/tile in Alfred when user is inside the module (active state); all depends on AngularJS controller names but in most cases it should be just the same as the module name and the JS controllers should have it in their name (example: `NewsArticleController` - this way the `nameModule` set to `news` will be used to be checked if the JS controller has this string in its name (without capitalisation) and menu tile will be highlighted then).

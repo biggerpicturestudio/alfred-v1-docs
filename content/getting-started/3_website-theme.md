@@ -4,7 +4,9 @@ metaTitle: "Website Theme"
 metaDescription: ""
 ---
 
-Website Theme is a library of designed & front-end coded elements that have to be reflected in Alfred CMS in order to allow Alfred Users to use them for example in Headers or Sections. **Re-usable front-end bits have to be connected to Alfred.**
+Website Theme is a library of designed & front-end coded elements that have to be reflected in Alfred CMS in order to allow Alfred Users to use them for example in Headers or Sections. 
+
+**Re-usable front-end theme elements have to be connected to Alfred and their implementation is one of the essential steps to do at the beginning of setting up a project to give Alfred Users flexibility of section/header/other elements customisation and usage.**
 
 # Website Theme elements 
 The Website Theme elements that always have to be prepared by front-end developers before implementation in Alfred are:

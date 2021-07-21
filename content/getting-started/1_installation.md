@@ -22,11 +22,11 @@ If you want to use Docker to install those 3 components - please read the next s
 In the Alfred repository (see the link to it in the section below) there is the *docker-compose.yml* file and entire Nginx/PHP/MySQL configuration. You can just run `docker-compose up` and follow the installation steps below.
 
 # Installation
-Plain Alfred repo you can find here: https://bitbucket.org/snowflakers/alfred-v1/src/master/. Please follow the installation steps below.
+**Plain Alfred code repository** you can find here: https://bitbucket.org/snowflakers/alfred-v1/src/master/. Please follow the installation steps below.
 
 ### Installation & running project without Docker
 
-1. Download the code and paste it into root of your project.
+1. **Download all the code from repository** (inc. `.gitignore` file, Docker configuration and so on) and paste it into root of your project.
 2. Create a database (you can use PHPMyAdmin if you prefer) and import the `database.sql` file.
 3. In the `cms-backend/` folder create the `.env` file and paste the contents of `.env.example`. Enter the credentials, at least for the database connection.
 4. Install the PHP dependencies, running `composer install` and then `php artisan key:generate` in the terminal, from the `cms-backend/` location.
@@ -34,7 +34,7 @@ Plain Alfred repo you can find here: https://bitbucket.org/snowflakers/alfred-v1
 
 ### Installation & running project on Docker
 
-1. Download the code from repository and paste it into root of your project.
+1. **Download all the code from repository** (inc. `.gitignore` file, Docker configuration and so on) and paste it into root of your project.
 2. Create `.env` file in the root folder with the contents of `/.env.example` and set the `PROJECT_NAME` and database settings (`MYSQL_*`).
 3. In the `cms-backend/` folder create the `.env` file and paste the contents of `cms-backend/.env.example`. Enter the credentials, at least for the database connection.
 4. Run `docker-compose up` from the root folder (you will see errors but do not worry about it for now - see next points).
@@ -45,7 +45,7 @@ Plain Alfred repo you can find here: https://bitbucket.org/snowflakers/alfred-v1
 
 &#42; if you do not know the container names, just run `docker ps` to find them out.
 
-# Code Repositories
+# Other Code Repositories
 Please see the list of available ready-to-use modules on Bitbucket. Copy the code of some needed module and paste into your project following the README files.
 
 - [Blog module](https://bitbucket.org/snowflakers/alfred-v1-blog/src/master/)
