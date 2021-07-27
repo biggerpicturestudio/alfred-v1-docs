@@ -213,6 +213,11 @@ In Alfred, in the **Settings -> Website Settings -> IMGIX Default Settings**, yo
 - **Fit:** Crop
 - **Output Quality:** 90
 - **Auto:** Format (with **Force png extension** option enabled)
-- **Crop mode:** Focalpoint, Edges
+- **Crop mode:** Faces, Edges
+
+**Example:**
+```
+https://example.imgix.net/storage/uploads/image.jpg?w=1919&fit=crop&crop=faces,edges&auto=format&q=90&fm=png
+```
 
 Please go to [Imgix website](https://imgix.com/) to learn more what those parameters and the values mean. Of course feel free to adjust them if you want.
