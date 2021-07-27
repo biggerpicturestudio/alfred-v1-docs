@@ -550,6 +550,28 @@ If there is a need in some section that Alfred User should be able to choose a c
 * **Additional information:**
 If you want to edit the text colour options, go to `cmsassets/_ng/templates/templates.tpl.html` and find this microcomponent in order to set your own values. Remember that they should map the options in `config/theme.php` --> `colours -> font`.
 
+# form-selection (Form)
+Almost every website has a contact form in one of the headers or sections. In order to implement it, use the **form-selection** microcomponent that will allow Alfred User choosing the Alfred Form.
+
+* #### Preview:
+<img src="/microcomponent-form-selection.png" alt="Microcomponent: text colours" />
+
+It is a common case that a form might get a different colour variant. Feel free to edit the `cmsassets/_ng/directives/FormSelection/templates/form-selection.tpl.html` and add/edit the **Block bg colour**. It is recommended to use the ```HTML::backgroundColour() ``` method to return right CSS class for it (to map saved background colour id from `config/theme.php`) - take a look at `resoures/views/Website/Form-templates/block-bg-colour.blade.php` to see how it goes. Of course you can edit this file.
+
+* #### JSON configuration example
+```
+"form": {
+    "order": 1,
+    "type": "form-selection",
+    "label": "Form"
+}
+```
+
+* #### Example of implementation in a section
+```
+@include('Website.Form-templates.section-form')
+```
+
 <hr />
 
 # include (known as autocompleter)
