@@ -4,7 +4,7 @@ metaTitle: "Getting started"
 metaDescription: ""
 ---
 
-If you are novice in using Alfred and front-end code implementation into Alfred system, it is highly recommended to start from reading about the Alfred concept, structure, how the page content is organised, how to implement front-end code in front page's templates, what microcomponents are, how to create sections, headers, how to implement and so on. 
+If you are novice in using Alfred and the front-end code implementation into Alfred system, it is highly recommended to start from reading about the Alfred concept, structure, how the page content is organised, how to implement front-end code in the front page's templates, what microcomponents are, how to create sections, headers, how to implement and so on. 
 
 **Please go through all the documentation pages first in order to understand Alfred**.
 
