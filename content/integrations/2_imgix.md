@@ -18,6 +18,7 @@ Alfred has been engineered with the front-end performance in mind. Optimised ima
 - ability to return in HTML responsive picture-images `<picture>`
 - ability to return in HTML responsive background images
 - ability to lazy load them
+- automatic, global adding image URL parameters
 
 ## Setting up image sets
 In the `cms-backend/config/srcset-settings.php` (**section_settings**) you can specify image sets. Feel free to create as many of them as you and your project needs.
@@ -204,3 +205,14 @@ Please remember to embed image in every section with lazy loading! This example 
 ```
 
 Pleaee analyse the example above with the configuration set from point 2.
+
+# Global Imgix URL parameters settings
+In Alfred, in the **Settings -> Website Settings -> IMGIX Default Settings**, you can find settings that will be reflected in automatically added image URL parameters each time when you use Imgix facade in your blade templates.
+
+**Recommended settings:**
+- **Fit:** Crop
+- **Output Quality:** 90
+- **Auto:** Format (with **Force png extension** option enabled)
+- **Crop mode:** Focalpoint, Edges
+
+Please go to [Imgix website](https://imgix.com/) to learn more what those parameters and the values mean. Of course feel free to adjust them if you want.
