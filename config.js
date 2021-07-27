@@ -1,7 +1,7 @@
 const config = {
   gatsby: {
     pathPrefix: '/',
-    siteUrl: 'https://hasura.io',
+    siteUrl: 'https://docs.alfred-cms.com',
     gaTrackingId: null,
     trailingSlash: false,
   },
@@ -37,7 +37,6 @@ const config = {
       '/routing',
       '/partials',
       '/settings',
-      '/video-tutorials',
       '/code-snippets'
     ],
     collapsedNav: [
@@ -57,24 +56,24 @@ const config = {
     description: 'Documentation built with mdx. Powering hasura.io/learn ',
     ogImage: null,
     docsLocation: 'https://github.com/hasura/gatsby-gitbook-boilerplate/tree/master/content',
-    favicon: 'https://graphql-engine-cdn.hasura.io/img/hasura_icon_black.svg',
+    favicon: '/favicon.png',
   },
   pwa: {
     enabled: false, // disabling this will also remove the existing service worker.
     manifest: {
-      name: 'Gatsby Gitbook Starter',
-      short_name: 'GitbookStarter',
+      name: 'Alfred v1 Docs',
+      short_name: 'AlfredDocs',
       start_url: '/',
-      background_color: '#6b37bf',
-      theme_color: '#6b37bf',
+      background_color: '#000000',
+      theme_color: '#000000',
       display: 'standalone',
       crossOrigin: 'use-credentials',
       icons: [
-        {
+        /*{
           src: 'src/pwa-512.png',
           sizes: `512x512`,
           type: `image/png`,
-        },
+        },*/
       ],
     },
   },

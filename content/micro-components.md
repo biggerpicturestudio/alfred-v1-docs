@@ -589,6 +589,17 @@ Sometimes in the sections, there may be a need to display a lead of some page (s
 }
 ```
 
+**Attention please:**
+As soon as Alfred User has selected some page via this microcomponent, it saves following data (that is accessible through `$components`):
+```
++some_article: {
+    +id: 1
+    +title: "Page title"
+}
+```
+
+**The `title` property should never be used on front page!** Its purpose is to display the page title/name only in that microcomponent, in Alfred interface. You should always only rely on the page's `id` and pull the needed data by this ID (page title, lead etc.)
+
 <hr />
 
 # include-filter (known as autocompleter)
@@ -606,6 +617,17 @@ It is exactly the same microcomponent as the **include** one, however it has ver
     "search_type": "blog"
 }
 ```
+
+**Attention please:**
+As soon as Alfred User has selected some page via this microcomponent, it saves following data (that is accessible through `$components`):
+```
++some_blog: {
+    +id: 1
+    +title: "Page title"
+}
+```
+
+**The `title` property should never be used on front page!** Its purpose is to display the page title/name only in that microcomponent, in Alfred interface. You should always only rely on the page's `id` and pull the needed data by this ID (page title, lead etc.)
 
 <hr />
 
