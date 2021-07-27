@@ -204,10 +204,10 @@ Please remember to embed image in every section with lazy loading! This example 
 @endif
 ```
 
-Pleaee analyse the example above with the configuration set from point 2.
+Please analyse the example above with the configuration set from the point 2.
 
 # Global Imgix URL parameters settings
-In Alfred, in the **Settings -> Website Settings -> IMGIX Default Settings**, you can find settings that will be reflected in automatically added image URL parameters each time when you use Imgix facade in your blade templates.
+In Alfred, in the **Settings -> Website Settings -> IMGIX Default Settings**, you can find settings that will be reflected in automatically added image URL parameters each time when you use the Imgix facade in your blade templates.
 
 **Recommended settings:**
 - **Fit:** Crop
