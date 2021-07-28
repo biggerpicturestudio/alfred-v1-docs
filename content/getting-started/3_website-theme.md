@@ -92,7 +92,7 @@ Once this is all done, in Alfred, if you create a header or section that uses th
 
 **Please always add some button(s) and test them on the front page in terms of the selected appearance style. Make sure it matches the original design/front-end code on the website.**
 
-Sometimes the button's HTML code (because of custom design) requires special HTML changes. If this is the case in your project, just go to button template - `resources/views/Website/Templates/button.blade.php` - (used on front page of the website) and adjust the code it as you wish.
+Sometimes the button's HTML code (because of custom design) requires special HTML changes. If this is the case in your project, just go to button template - `cms-backend/resources/views/Website/Templates/button.blade.php` - (used on front page of the website) and adjust the code it as you wish.
 
 # 2. Section padding sizes
 Files that you have to edit:
@@ -357,11 +357,11 @@ Next step is to find &lt;select&gt; with font size options in Alfred microcompon
 The same, please apply to `pages-section-settings-modal.tpl.html` where the **Text size** dropdown is.
 
 # 7. Forms and their fields
-All the contact forms in Alfred can be created via **Forms** module. Several options in the module such as creating the fields, setting up a layout of them (100% or 50%/50% columns) cause a need of preparing the front-end code dictated by Alfred Forms HTML. Please keep the front-end code of Alfred Forms templates unchanged (in `resources/views/Website/Alfred-Form-Builder/**/*.php`). If custom design requires some changes, please discuss it with front-end developer and try to make any custom apperance only via CSS.
+All the contact forms in Alfred can be created via **Forms** module. Several options in the module such as creating the fields, setting up a layout of them (100% or 50%/50% columns) cause a need of preparing the front-end code dictated by Alfred Forms HTML. Please keep the front-end code of Alfred Forms templates unchanged (in `cms-backend/views/Website/Alfred-Form-Builder/**/*.php`). If custom design requires some changes, please discuss it with front-end developer and try to make any custom apperance only via CSS.
 
-If there is no chance to get it done this way, feel free to edit the form templates (`resources/views/Website/Alfred-Form-Builder/**/*.php`), **however after all the changes please make sure it all works fine.**
+If there is no chance to get it done this way, feel free to edit the form templates (`cms-backend/resources/views/Website/Alfred-Form-Builder/**/*.php`), **however after all the changes please make sure it all works fine.**
 
 # Last step: CSS styles for TinyMCE editor
-Colours, headlines, lists etc. in TinyMCE need to have some styling in order to display them correctly in the editor. Front-end developer should prepare & copy the CSS code needed only for them in the `resources/cmsassets/_scss/tinymce.scss`. Do not worry about font face (can be default Arial), ideally matched font size etc. - editor should only match the real front page design as much as possible but it never will be the same look & feel. 
+Colours, headlines, lists etc. in TinyMCE need to have some styling in order to display them correctly in the editor. Front-end developer should prepare & copy the CSS code needed only for them in the `cms-backend/resources/cmsassets/_scss/tinymce.scss`. Do not worry about font face (can be default Arial), ideally matched font size etc. - editor should only match the real front page design as much as possible but it never will be the same look & feel. 
 
 Once this is done, please run `grunt prod:cms` from the `cms-backend/` folder in order to compile the files. From now, the TinyMCE editor will be displaying the styles within it visually correctly for Alfred Users.
