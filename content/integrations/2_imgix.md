@@ -21,7 +21,7 @@ Alfred has been engineered with the front-end performance in mind. Optimised ima
 - automatic, global adding image URL parameters
 
 ## Setting up image sets
-In the `cms-backend/config/srcset-settings.php` (**section_settings**) you can specify image sets. Feel free to create as many of them as you and your project needs.
+In the `config/srcset-settings.php` (**section_settings**) you can specify image sets. Feel free to create as many of them as you and your project needs.
 
 **Example of image set config:**
 ```
@@ -179,7 +179,7 @@ Please remember to embed image in every section with lazy loading! This example 
     <img class="media-frame__media lazy" data-src="/images/tmp/triangle-commodities-desktop-right.png?w=2000" width="462" height="445" alt="">
 </picture>
 ```
-2. Prepare image set configuration in `cms-backend/config/srcset-settings.php`. Create a new index name (ideally if the name describes this image type per section type) and take the breakpoint, width/height values from HTML code and copy over into the config set. Example:
+2. Prepare image set configuration in `config/srcset-settings.php`. Create a new index name (ideally if the name describes this image type per section type) and take the breakpoint, width/height values from HTML code and copy over into the config set. Example:
 ```
     'section-50-50-image' => [
         [500, 450, null],

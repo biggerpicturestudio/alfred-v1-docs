@@ -30,7 +30,7 @@ This way you can display the CSS class on front page if admin has selected it in
 for example if menu item has an option to set opening link in a new tab - bring a support for it on front page!
 
 ## Menu implementation (examples)
-The blade templates responsible for all the menus are located in: `cms-backend/resources/views/Menus`. Please manage the code of all the menus over there!
+The blade templates responsible for all the menus are located in: `resources/views/Menus`. Please manage the code of all the menus over there!
 
 ### Example of menu implementation (no submenu)
 ```

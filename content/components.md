@@ -16,7 +16,7 @@ To enable a component type, you need to edit the `config/cms.php` configuration 
 
 Backend of components for the Alfred panel can be managed in the `app/Cms/Modules/Components`. There is a business logic in them and feel free to edit that.
 
-Frontend of components for Alfred panel can be managed in the `cms-backend/resources/cmsassets/_ng/Components`. Every component type has “create” and “edit” forms that you can change too!
+Frontend of components for Alfred panel can be managed in the `resources/cmsassets/_ng/Components`. Every component type has “create” and “edit” forms that you can change too!
 
 To display component’s content on front page, in the section blade template, you need to call a specific facade responsible for component type. Business logic and methods that you can call from blade template level are visible in `app/Website/Services/ComponentService.php`.
 

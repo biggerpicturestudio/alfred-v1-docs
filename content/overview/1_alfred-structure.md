@@ -33,14 +33,14 @@ PHP Templates (blade templates) - they exist in the resources/views directory. L
 
 Alfred (as an admin panel) is written with AngularJS as mentioned previously. Every action which takes place in the panel (such as admin creation, editing, removing and so on) calls Alfred internal API (open DevTools on your browser and start clicking through panel to see what happens). That way, in Angular we send or consume the data and present them as an action in panel.
 
-The Angular HTML views (in the `cms-backend/resources/cmsassets/_ng` folder) can be edited „as is” and the changes are visible immediately in Alfred (no code compilation needed). More advanced changes in the JS files require the code compilation. Then running the grunt commands is needed to compile the code:
+The Angular HTML views (in the `resources/cmsassets/_ng` folder) can be edited „as is” and the changes are visible immediately in Alfred (no code compilation needed). More advanced changes in the JS files require the code compilation. Then running the grunt commands is needed to compile the code:
 - If you edit some JS files and you want to see the changes while editing them: run command from `cms-backend/` folder:
 `grunt dev:cms`
 - If you have finished editing the JS files and you want to recompile the AngularJS things, run command:
 `grunt prod:cms`
 
-Angular stuff is editable through `cms-backend/resources/cmsassets/_ng` folder. 
+Angular stuff is editable through `resources/cmsassets/_ng` folder. 
 
-**If you wish to add new modules, components and install some new Angular/JS files**, go edit the `cms-backend/resources/cmsassets/javascripts.json` file. There is an array of paths to JS files. If you make changes over there, do not forget to run `grunt prod:cms` later.
+**If you wish to add new modules, components and install some new Angular/JS files**, go edit the `resources/cmsassets/javascripts.json` file. There is an array of paths to JS files. If you make changes over there, do not forget to run `grunt prod:cms` later.
 
 

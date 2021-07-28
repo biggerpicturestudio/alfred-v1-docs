@@ -22,11 +22,11 @@ As soon as some section field is filled out by Alfred User, their values are sav
 Alfred in basic, plain version has several ready column sections such as `section-100.blade.php`, `section-50-50.blade.php`, `section-25-25-25-25.blade.php`, `section-70-30.blade.php` and so on. Please keep them as they are and do not touch their code unless the specific, custom design requires some changes to be made in them.
 
 # 2. Section creating in new vs old Alfred version
-Creating a section depends if you use a newer or older Alfred section. To recognise which one you use, you should go to `cms-backend/resources/views/Website/Sections` folder. If there is the `jsons` folder, it means you use the newer, improved version of Alfred.
+Creating a section depends if you use a newer or older Alfred section. To recognise which one you use, you should go to `resources/views/Website/Sections` folder. If there is the `jsons` folder, it means you use the newer, improved version of Alfred.
 
 The only one difference between a new and an old version of Alfred in terms of section creation is the place where the section settings (in JSON format) are being saved.
 
-In newer Alfred, the JSON settings of every section are being created physically in the codebase, in the `cms-backend/resources/views/Website/Sections/jsons` folder. It means once a new section is created and you deploy it to staging / production, you do not have to do anything - the new section will just be available automatically once deployed.
+In newer Alfred, the JSON settings of every section are being created physically in the codebase, in the `resources/views/Website/Sections/jsons` folder. It means once a new section is created and you deploy it to staging / production, you do not have to do anything - the new section will just be available automatically once deployed.
 
 In the older version of Alfred, the JSON settings are being saved in the sections database table (JSON settings are editable via Alfred CMS in the Settings → Sections section). It has one serious flaw - as soon as you have created a new section and you want to deploy it, once the changes are deployed to a different environment, you need to manually copy the JSON settings of the section from your local environment into the target environment via Alfred (Settings → Section templates).
 
@@ -38,11 +38,11 @@ We can divide the sections into 2 groups: **headers** and **sections**. Headers 
 Example: `header-simple.blade.php`, `header-50-50-with-image.blade.php`, `section-standout-cta.blade.php`, `section-100.blade.php`, `section-product-list.blade.php` etc.
 
 # 4. How to create a new section or header?
-In order to create a new section, you should go to `cms-backend/resources/views/Website/Sections` folder and create a new PHP template file with a proper name following the naming convention, for example: `section-standout-cta.blade.php` or `header-hello-world.blade.php`. First of all, you should copy & paste the HTML code responsible for the section from front-end HTML page into that blade template.
+In order to create a new section, you should go to `resources/views/Website/Sections` folder and create a new PHP template file with a proper name following the naming convention, for example: `section-standout-cta.blade.php` or `header-hello-world.blade.php`. First of all, you should copy & paste the HTML code responsible for the section from front-end HTML page into that blade template.
 
 Next step is to create the section type for Alfred Users so they can edit the fields. **You can use the full example of section/header JSON configuration from [Code Snippets](/code-snippets) and just adjust it to your needs.**
 
-In newer Alfred version, in the `cms-backend/resources/views/Website/Sections/jsons` folder, you should create a JSON file with exactly the same name as the section, example: `section-standout-cta.json`. In older Alfred versions, you should just log in to Alfred and go to **Settings → Section templates** and find the **section-standout-cta** template and click it so you can edit the JSON settings directly within Alfred. Below you can find sample JSON settings of one of the settings.
+In newer Alfred version, in the `resources/views/Website/Sections/jsons` folder, you should create a JSON file with exactly the same name as the section, example: `section-standout-cta.json`. In older Alfred versions, you should just log in to Alfred and go to **Settings → Section templates** and find the **section-standout-cta** template and click it so you can edit the JSON settings directly within Alfred. Below you can find sample JSON settings of one of the settings.
 
 ```
 {

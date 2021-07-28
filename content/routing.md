@@ -4,7 +4,7 @@ metaTitle: "Routing"
 metaDescription: ""
 ---
 
-In order to understand how the routing of CMS and website works, you should open the `cms-backend/app/Http/routes.php` file first.
+In order to understand how the routing of CMS and website works, you should open the `app/Http/routes.php` file first.
 
 ## CMS routes
 All the routes within a route groups with `cms/auth` and `cms` prefix are responsible for the **/cms** (CMS) admin panel. There are routes responsible for the specific API endpoints that call controllers within modules. Every time when you want to investigate what some CMS API endpoint does, you should go to the `routes.php` file and look which controller is called and what kind of HTTP methods it uses. 
