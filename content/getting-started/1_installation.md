@@ -58,4 +58,6 @@ Extremely helpful repository you can also find here: https://bitbucket.org/snowf
 - PHP 7.4
 - MySQL 8.0 database (can be MariaDB)
 
+**Website document root should be set to `cms-backend/public` folder.**
+
 Useful information about setting up a production server to run Alfred project you can find here: https://bitbucket.org/snowflakers/server-nginx-configuration/src/master/. It is oriented to deployment to [DigitalOcean](https://www.digitalocean.com/) but lots of configuration instructions can be helpful for you even if you decide to launch your project with totally different hosting provider.

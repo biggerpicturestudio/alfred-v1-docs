@@ -4,6 +4,23 @@ metaTitle: "Alfred Structure"
 metaDescription: ""
 ---
 
+# Folder structure
+
+Every Alfred-based project, when it comes to folder structure, has to consist of **two main folders**:
+- `cms-backend/`
+- `frontend/`
+
+**The idea behind it is one:** front-end developer has their 'own' folder (`frontend/`) where the front-end files are and the final website, with the backend, is in the separate `cms-backend/` one that only points (thanks to symlinks) to a few static, front-end files from the `frontend` folder.
+
+In the `frontend/` folder there should be only front-end files of a project. Built assets (CSS, JS, images etc.) should be stored in the `frontend/dist/` directory separately. 
+
+**By default, plain Alfred repository, does not include any `frontend/` folder - front-end layer of project has to be prepared first in a repository and at the root level of the same repo, the `cms-backend/` folder (inc. other files mentioned on the **Installation** page in this documentation) should be copied after that.** This way, the project's repository finally should contain 2 main folders: `frontend/` and `cms-backend/`.
+
+In the `cms-backend/` folder there are backend-related files, inc. the whole back-end logic of the website. There are also AngularJS front-end files responsible for the Alfred's admin panel (accessible under **/cms** URL). Website document root path should point to `cms-backend/public/` folder. In that directory, there have to be symlinks set up (it is done by default in the plain Alfred repo) that point to `../frontend/dist/` folder. 
+
+Every time, when front-end developer creates front-end HTML views (in the `frontend/`) folder first, the backend templates have to be created then in the `cms-backend/` folder based on copied HTML code from that frontend folder. CSS, JS and images on the ready website point to `frontend/dist/` folder.
+
+# Alfred concept and structure
 Alfred is based on **Modules** (content and non-content ones), **Headers / Sections**, **Microcomponents**, **Components**, **Menus**, **Partials**, **Settings**, **User Authentication & Authorisation**. 
 
 **Non-content modules** are those ones that are not responsible for content creation. Perfect example of a non-content module could be the Forms module that just stores the form submissions from a website and gives Alfred Users an ability to manage them.
