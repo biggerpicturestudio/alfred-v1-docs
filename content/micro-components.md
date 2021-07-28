@@ -556,7 +556,7 @@ Almost every website has a contact form in one of the headers or sections. In or
 * #### Preview:
 <img src="/microcomponent-form-selection.png" alt="Microcomponent: text colours" />
 
-It is a common case that a form might get a different colour variant. Feel free to edit the `cmsassets/_ng/directives/FormSelection/templates/form-selection.tpl.html` and add/edit the **Block bg colour**. It is recommended to use the ```HTML::backgroundColour() ``` method to return right CSS class for it (to map saved background colour id from `config/theme.php`) - take a look at `resoures/views/Website/Form-templates/block-bg-colour.blade.php` to see how it goes. Of course you can edit this file.
+It is a common case that a form might get a different colour variant. Feel free to edit the `cmsassets/_ng/directives/FormSelection/templates/form-selection.tpl.html` and add/edit the **Block bg colour**. It is recommended to use the ```HTML::backgroundColour() ``` method to the CSS class for it (to map a saved background colour id from `config/theme.php`) - take a look at `resources/views/Website/Form-templates/block-bg-colour.blade.php` to see how it goes. Of course you can edit this file.
 
 * #### JSON configuration example
 ```
