@@ -16,7 +16,7 @@ metaDescription: ""
 - PHP 7.4
 - MySQL 8.0 database (can be MariaDB)
 
-If you want to use Docker to install those 3 components - please read the next section. If you use MacOS or Windows system and you do not want to use Docker (ya, it is so slow!), you should install them manually (for example using Homebrew on your Mac). If you are on Windows, you can install the oldschool [XAMPP package](https://www.apachefriends.org/pl/download.html) - it is fine to use it and contains PHP, Apache and MySQL (just make sure you choose the right version). You will have a lot of other useful tools too such as PHPMyAdmin where you can create and manage databases.
+If you want to use Docker to install those 3 components - please read the next section. If you use MacOS or Windows system and you do not want to use Docker (ya, it is so slow!), you should install them manually (for example using Homebrew on your Mac). If you are on Windows, you can install the oldschool [XAMPP package](https://www.apachefriends.org/pl/download.html) or [MAMP](https://www.mamp.info/en/mamp) - it is fine to use it and contains PHP, Apache and MySQL (just make sure you choose the right version). You will have a lot of other useful tools too such as PHPMyAdmin where you can create and manage databases.
 
 ### Docker
 In the Alfred repository (see the link to it in the section below) there is the `docker-compose.yml` file and entire Nginx/PHP/MySQL configuration. You can just run `docker-compose up` and follow the installation steps below.
