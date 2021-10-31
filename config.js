@@ -36,6 +36,7 @@ const config = {
       '/menu',
       '/routing',
       '/partials',
+      '/error-pages',
       '/settings',
       '/code-snippets'
     ],
