@@ -15,6 +15,7 @@ If you are novice in using Alfred and the front-end code implementation into Alf
 4. Website navigation (Menu) implementation.
 4. Creating headers and sections.
 5. Views implementation in all modules.
+6. Error pages implementation.
 
 In case of custom project needs - feel free to do whatever you need. 
 
