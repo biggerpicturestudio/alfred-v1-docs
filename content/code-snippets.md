@@ -439,3 +439,15 @@ If in Alfred there is a field to put a phone number, Alfred Users most probably 
     {{ $variableWithPhone }}
 </a>
 ```
+
+### Example of returning company address
+If you want to edit the company address in Alfred, you need to go to **Settings -> Website Settings -> SEO -> Address**. Then, on front page you can use the following code snippet to display it correctly.
+
+```
+    {{ $settings['street_address'] }}, <br>
+    {{ !empty($settings['street_address_line2']) ? $settings['street_address_line2'] . ', ' : '' }}<br>
+    {{ !empty($settings['address_locality']) ? $settings['address_locality'] . ', ' : '' }}
+    {{ !empty($settings['address_region']) ? $settings['address_region'] . ',' : $settings['address_region'] }}<br>
+    {{ $settings['postal_code'] }},
+    {{ $settings['address_country'] }}
+```
