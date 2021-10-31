@@ -361,7 +361,13 @@ All the contact forms in Alfred can be created via **Forms** module. Several opt
 
 If there is no chance to get it done this way, feel free to edit the form templates (`resources/views/Website/Alfred-Form-Builder/**/*.php`), **however after all the changes please make sure it all works fine.**
 
-# Last step: CSS styles for TinyMCE editor
+# Last steps
+### CSS styles for TinyMCE editor
 Colours, headlines, lists etc. in TinyMCE need to have some styling in order to display them correctly in the editor. Front-end developer should prepare & copy the CSS code needed only for them in the `resources/cmsassets/_scss/tinymce.scss`. Do not worry about font face (can be default Arial), ideally matched font size etc. - editor should only match the real front page design as much as possible but it never will be the same look & feel. 
 
 Once this is done, please run `grunt prod:cms` from the `cms-backend/` folder in order to compile the files. From now, the TinyMCE editor will be displaying the styles within it visually correctly for Alfred Users.
+
+### config/seo.php
+Settings from that file are being used across `<head>` tags on the website. Please set the **company name** as a minimum. It is always good to set the Twitter username too.
+
+All the other indexes can be kept untouched because the values are connected to frontend.
