@@ -370,4 +370,4 @@ Once this is done, please run `grunt prod:cms` from the `cms-backend/` folder in
 ### config/seo.php
 Settings from that file are being used across `<head>` tags on the website. Please set the **company name** as a minimum. It is always good to set the Twitter username too.
 
-All the other indexes can be kept untouched because the values are connected to frontend.
+All the other indexes can be kept untouched because the values are related to frontend.
