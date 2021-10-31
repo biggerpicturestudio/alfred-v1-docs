@@ -365,6 +365,8 @@ If there is no chance to get it done this way, feel free to edit the form templa
 ### CSS styles for TinyMCE editor
 Colours, headlines, lists etc. in TinyMCE need to have some styling in order to display them correctly in the editor. Front-end developer should prepare & copy the CSS code needed only for them in the `resources/cmsassets/_scss/tinymce.scss`. Do not worry about font face (can be default Arial), ideally matched font size etc. - editor should only match the real front page design as much as possible but it never will be the same look & feel. 
 
+In order to prepare the CSS code in the quickest way, **get the contents of `frontend/dist/styles/main.css`, <a href="https://www.freeformatter.com/css-beautifier.html" target="_blank" rel="noopener noreferrer">beautify it</a> and copy only the CSS parts responsible for the Theme elements.** Paste them into the `resources/cmsassets/_scss/tinymce.scss` file.
+
 Once this is done, please run `grunt prod:cms` from the `cms-backend/` folder in order to compile the files. From now, the TinyMCE editor will be displaying the styles within it visually correctly for Alfred Users.
 
 ### config/seo.php
