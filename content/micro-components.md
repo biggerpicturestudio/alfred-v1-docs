@@ -662,7 +662,7 @@ Once the component button is clicked, it opens up a popup to edit it.
 * #### Example of component implementation (People component example):
 ```
 @if (!empty($components->people->id))
-    {!! \Website\Component::people(
+    {!! \WebsiteComponent::people(
         $components->people->id, 
         'people-component-template', 
         ['sectionId' => $key]

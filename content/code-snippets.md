@@ -406,7 +406,7 @@ Please remember to embed image in every section with lazy loading! This example 
 
 ```
 @if (!empty($components->people->id))
-    {!! \Website\Component::people(
+    {!! \WebsiteComponent::people(
         $components->people->id, 
         'component-blade-template-name', 
         ['someExtraVariableAvailableInTemplate' => 'test']

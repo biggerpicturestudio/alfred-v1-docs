@@ -13,10 +13,10 @@ metaDescription: ""
 
 #### 2. To install and run Alfred project, you need also:
 - Nginx or Apache
-- PHP 7.4
+- PHP 8.0+
 - MySQL 8.0 database (can be MariaDB)
 
-If you want to use Docker to install those 3 components - please read the next section. If you use MacOS or Windows system and you do not want to use Docker (ya, it is so slow!), you should install them manually (for example using Homebrew on your Mac). If you are on Windows, you can install the oldschool [XAMPP package](https://www.apachefriends.org/pl/download.html) or [MAMP](https://www.mamp.info/en/mamp) - it is fine to use it and contains PHP, Apache and MySQL (just make sure you choose the right version). You will have a lot of other useful tools too such as PHPMyAdmin where you can create and manage databases.
+If you want to use Docker to install those 3 components - please read the next section. If you use MacOS or Windows system and you do not want to use Docker (ya, it is so slow!), you should install them manually (for example using Homebrew on your Mac). If you are on Windows, you can install the oldschool [XAMPP package](https://www.apachefriends.org/pl/download.html) or [MAMP](https://www.mamp.info/en/mamp) (<b>recommended!</b>) - it is fine to use it and contains PHP, Apache and MySQL (just make sure you choose the right version). You will have a lot of other useful tools too such as PHPMyAdmin where you can create and manage databases.
 
 ### Docker
 In the Alfred repository (see the link to it in the section below) there is the `docker-compose.yml` file and entire Nginx/PHP/MySQL configuration. You can just run `docker-compose up` and follow the installation steps below.
@@ -28,7 +28,7 @@ In the Alfred repository (see the link to it in the section below) there is the 
 
 1. **Download all the code from repository** (inc. `.gitignore` file, Docker configuration and so on) and paste it into root of your project.
 2. Create a database (you can use PHPMyAdmin if you prefer) and import the `database.sql` file.
-3. In the `cms-backend/` folder create the `.env` file and paste the contents of `.env.example`. Enter the credentials, at least for the database connection.
+3. In the `cms-backend/` folder create the `.env` file and paste the contents of `.env.example`. Enter the credentials, at least for the database connection and email sending.
 4. Install the PHP dependencies, running `composer install` and then `php artisan key:generate` in the terminal, from the `cms-backend/` location.
 5. Run `php artisan serve` and you should be able to see the project and start developing.
 
@@ -36,7 +36,7 @@ In the Alfred repository (see the link to it in the section below) there is the 
 
 1. **Download all the code from repository** (inc. `.gitignore` file, Docker configuration and so on) and paste it into root of your project.
 2. Create `.env` file in the root folder with the contents of `/.env.example` and set the `PROJECT_NAME` and database settings (`MYSQL_*`).
-3. In the `cms-backend/` folder create the `.env` file and paste the contents of `cms-backend/.env.example`. Enter the credentials, at least for the database connection.
+3. In the `cms-backend/` folder create the `.env` file and paste the contents of `cms-backend/.env.example`. Enter the credentials, at least for the database connection and email sending.
 4. Run `docker-compose up` from the root folder (you will see errors but do not worry about it for now - see next points).
 5. Copy the database file (`database.sql`) into database container* (`docker cp database.sql DATABASE_CONTAINER_NAME:/`)
 6. Connect to the database container* (`docker exec -it DATABASE_CONTAINER_NAME bash`); connect to MySQL service using `mysql -u MYSQL_USER -p` and import the database file into selected database (`source /database.sql`).

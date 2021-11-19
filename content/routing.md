@@ -15,13 +15,10 @@ All the routes that are responsible for the website (front page) are created dyn
 The route rule responsible for that is as below:
 
 ```
-$router->get('{language?}{slug}', [
-   'middleware' => ['alfredRedirect'],
-   'as' => 'website.page',
-   'uses' => 'Website\Controllers\RouteController@runLivePage'
-])
+Route::get('{language?}{slug}', [RouteController::class, 'runLivePage'])
     ->where('language', $languageRoutesAllowedEmpty)
-    ->where('slug', '.*');
+    ->where('slug', '.*')
+    ->name('website.page');
 ```
 
 The first parameter `{language?}` (that might exist in the URL or not) is responsible for the language. 

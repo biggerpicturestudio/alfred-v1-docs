@@ -23,7 +23,7 @@ To display component’s content on front page, in the section blade template, y
 ## Example how to call a component facade
 ```
 @if (!empty($components->people->id))
-    {!! \Website\Component::people(
+    {!! \WebsiteComponent::people(
         $components->people->id, 
         'component-blade-template-name', 
         ['someExtraVariableAvailableInTemplate' => 'test']
