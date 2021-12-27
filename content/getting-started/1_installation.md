@@ -40,7 +40,7 @@ In the Alfred repository (see the link to it in the section below) there is the 
 4. Run `docker-compose up` from the root folder (you will see errors but do not worry about it for now - see next points).
 5. Copy the database file (`database.sql`) into database container* (`docker cp database.sql DATABASE_CONTAINER_NAME:/`)
 6. Connect to the database container* (`docker exec -it DATABASE_CONTAINER_NAME bash`); connect to MySQL service using `mysql -u MYSQL_USER -p` and import the database file into selected database (`source /database.sql`).
-7. Connect to backend container* (`docker exec -it BACKEND_CONTAINER_NAME bash`) and install the PHP dependencies, running `composer install` + `php artisan key:generate`.
+7. Connect to Alfred container* (`docker exec -it ALFRED_CONTAINER_NAME bash`) and install the PHP dependencies from there, running `composer install` + `php artisan key:generate`.
 8. Once the dependencies are installed, you should be able to open the project at `http://0.0.0.0:8000` and start developing.
 
 &#42; if you do not know the container names, just run `docker ps` to find them out.
@@ -55,7 +55,7 @@ Extremely helpful repository you can also find here: https://bitbucket.org/snowf
 
 # Production deployment requirements
 - Nginx (preferrable) or Apache
-- PHP 7.4
+- PHP 8.0+
 - MySQL 8.0 database (can be MariaDB)
 
 **Website document root should be set to `cms-backend/public` folder.**
