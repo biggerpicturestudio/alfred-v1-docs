@@ -335,9 +335,17 @@ Additionally, as soon as the image URL field is specified by user, there is anot
 * #### Example of implementation in a section
 ```
 @if (!empty($components->some_field))
+    @php
+        $imageSizes = HTML::getImageSizes($components->some_field);
+    @endphp
+
     <img 
         src="{{ $components->some_field }}" 
         alt="{{ !empty($components->some_field_alt) ? $components->some_field_alt : '' }}"
+        @if (!empty($imageSizes[0]) && !empty($imageSizes[1]))
+            width="{{ $imageSizes[0] }}"
+            height="{{ $imageSizes[1] }}"
+        @endif
         >
 @endif
 ```
