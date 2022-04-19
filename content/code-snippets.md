@@ -39,12 +39,14 @@ This example shows a full demo of section fields that use different, useful micr
         "headline": {
             "order": 4,
             "type": "input",
-            "label": "Headline"
+            "label": "Headline",
+            "cms_width": 8
         },
         "headline_colour": {
             "order": 5,
-            "type": "custom-color",
-            "label": "Headline colour"
+            "type": "text-colours",
+            "label": "Headline colour",
+            "cms_width": 4
         },
         "text": {
             "order": 6,
@@ -131,7 +133,11 @@ This example shows a full demo of section fields that use different, useful micr
     <div class="@include('Website.Sections.columns-sections-partials.container-settings')">
 
         @if (!empty($components->headline))
-            <h2 class="headline-2">
+            <h2 
+                class="
+                    headline-2 
+                    {!! HTML::fontColour($components, 'headline_colour') !!}
+                ">
                 {{ $components->headline }}
             </h2>
         @endif
@@ -212,7 +218,11 @@ This header shows an example of configuration. It is just a demo so feel free to
 
     <div class="container">
         @if (!empty($components->headline))
-            <h1 class="headline-1">
+            <h1 
+                class="
+                    headline-1
+                    {!! HTML::fontColour($components, 'headline_colour') !!}
+                ">
                 {{ $components->headline }}
             </h1>
         @endif

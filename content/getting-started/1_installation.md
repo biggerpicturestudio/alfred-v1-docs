@@ -46,12 +46,15 @@ In the Alfred repository (see the link to it in the section below) there is the 
 &#42; if you do not know the container names, just run `docker ps` to find them out.
 
 # Other Code Repositories
-Please see the list of available ready-to-use modules on Bitbucket. Copy the code of some needed module and paste into your project following the README files.
 
-- [Blog module](https://bitbucket.org/snowflakers/alfred-v1-blog/src/master/)
-- more modules soon...
+[Alfred Examples Library](https://bitbucket.org/snowflakers/alfred-v1-examples-library/src/master/) - <b>this is the main repository you need</b>. Lots of helpful examples how to implement common section types, how to creare microcomponent etc. 
 
-Extremely helpful repository you can also find here: https://bitbucket.org/snowflakers/alfred-microcomponents/src/master/. You can find there ready custom microcomponents that you can re-use and adjust to meet your project requirements.
+Please also see the list of available ready-to-use modules on Bitbucket. Copy the code of some needed module and paste into your project following the README files.
+
+- [Insights module](https://bitbucket.org/snowflakers/alfred-v1-insights-module)
+- [News module](https://bitbucket.org/snowflakers/alfred-v1-news-module)
+
+Extremely helpful repository you can also find here - https://bitbucket.org/snowflakers/alfred-microcomponents/src/master/. You can find there ready custom microcomponents that you can re-use and adjust to meet your project requirements.
 
 # Production deployment requirements
 - Nginx (preferrable) or Apache

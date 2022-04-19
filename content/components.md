@@ -32,3 +32,6 @@ To display component’s content on front page, in the section blade template, y
 ```
 
 The `people()` method is located in the `app/Website/Services/ComponentService.php`. Please open the file and look through the methods - the method parameters are clear and easy to use. Of course feel free to modify them if you need.
+
+## Helpful resources
+- <a href="https://bitbucket.org/snowflakers/alfred-v1-examples-library/src/master/Meet%20the%20team%20section/" target="_blank" rel="noopener noreferrer">Meet the team section implementation example - tutorial</a>
